@@ -28,7 +28,10 @@ import {
 import { SmallCloseIcon, RepeatIcon } from "@chakra-ui/icons";
 import { useStoreState } from "easy-peasy";
 import Market from "../cardano/market";
-import secrets from "../../secrets";
+// import secrets from "../../secrets";
+
+const PROJECT_ID = "mainnetHDbhAmdQcwdcYeoGYMVvldun2zRNIBu2";
+
 
 //assets
 import Show from "../images/assets/show.svg";
@@ -84,7 +87,9 @@ const SpaceBud = ({ pageContext: { spacebud } }) => {
       fetch("https://api.spacebudzbot.com/tweet", {
         method: "POST",
         headers: {
-          Authorization: "Bearer " + secrets.TWITTER_BOT_TOKEN,
+          Authorization: "Bearer " + "123456789",
+
+          // Authorization: "Bearer " + secrets.TWITTER_BOT_TOKEN,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: spacebud.id.toString(), type, lovelace }),
@@ -103,7 +108,8 @@ const SpaceBud = ({ pageContext: { spacebud } }) => {
     market.current = new Market(
       {
         base: "https://cardano-mainnet.blockfrost.io/api/v0",
-        projectId: secrets.PROJECT_ID,
+        // projectId: secrets.PROJECT_ID,
+        projectId: PROJECT_ID
       },
       "addr1qxpxm8a0uxe6eu2m6fgdu6wqfclujtzyjdu9jw0qdxfjaz02h5ngjz7fftac5twlxj6jha4meenh6476m5xdwmeyh4hq0zeknx"
     );
@@ -117,7 +123,9 @@ const SpaceBud = ({ pageContext: { spacebud } }) => {
     const token = POLICY + toHex(`SpaceBud${spacebud.id}`);
     let addresses = await fetch(
       `https://cardano-mainnet.blockfrost.io/api/v0/assets/${token}/addresses`,
-      { headers: { project_id: secrets.PROJECT_ID } }
+      // { headers: { project_id: secrets.PROJECT_ID } }
+      { headers: { project_id: PROJECT_ID } }
+
     ).then((res) => res.json());
     const fiatPrice = await fetch(
       `https://api.coingecko.com/api/v3/simple/price?ids=cardano&vs_currencies=usd`

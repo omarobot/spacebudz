@@ -7,8 +7,10 @@ import { Box, SimpleGrid } from "@chakra-ui/layout";
 import { BeatLoader } from "react-spinners";
 import Icon from "@mdi/react";
 import { mdiOpenInNew } from "@mdi/js";
-import secrets from "../../secrets";
+// import secrets from "../../secrets";
 import { Spinner } from "@chakra-ui/spinner";
+
+const PROJECT_ID = "mainnetHDbhAmdQcwdcYeoGYMVvldun2zRNIBu2";
 
 const POLICY = "d5e6bf0500378d4f0da4e8dde6becec7621cd8cbf5cbb9b87013d4cc";
 
@@ -36,12 +38,16 @@ const Profile = ({ pageContext: { spacebudz } }) => {
     const tokens = { owned: [], bids: [], offers: [] };
     const amount = await fetch(
       `https://cardano-mainnet.blockfrost.io/api/v0/addresses/${address}`,
-      { headers: { project_id: secrets.PROJECT_ID } }
+      // { headers: { project_id: secrets.PROJECT_ID } }
+      { headers: { project_id: PROJECT_ID } }
+
     )
       .then((res) => res.json())
       .then((res) => res.amount);
     const offers = await fetch(`https://spacebudz.io/api/offers/${address}`, {
-      headers: { project_id: secrets.PROJECT_ID },
+      // headers: { project_id: secrets.PROJECT_ID },
+      headers: { project_id: PROJECT_ID },
+
     }).then((res) => res.json());
 
     tokens.offers = offers.offers.map((offer) => ({
@@ -50,7 +56,9 @@ const Profile = ({ pageContext: { spacebudz } }) => {
     }));
 
     const bids = await fetch(`https://spacebudz.io/api/bids/${address}`, {
-      headers: { project_id: secrets.PROJECT_ID },
+      // headers: { project_id: secrets.PROJECT_ID },
+      headers: { project_id: PROJECT_ID },
+
     }).then((res) => res.json());
 
     tokens.bids = bids.bids.map((bid) => ({
