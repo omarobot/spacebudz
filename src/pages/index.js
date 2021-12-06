@@ -23,7 +23,7 @@ const Landing = (props) => {
     <>
       <Metadata
         titleTwitter="SpaceBudz: Collectible Astronauts"
-        title="SpaceBudz"
+        title="Animaliens"
         description="Collect your unique SpaceBud as NFT on the Cardano blockchain."
       />
       <div>
@@ -72,7 +72,7 @@ const Landing = (props) => {
                           lineHeight: 1.3,
                         }}
                       >
-                        Collect your favorite astronauts!
+                        Collect your favorite Animaliens!
                       </div>
                       <Box h={6} />
                       <div
@@ -135,8 +135,8 @@ const Landing = (props) => {
                           fontWeight: "bold",
                         }}
                       >
-                        10,000 SpaceBudz are out there. Where will your
-                        SpaceBudz take you?
+                        8,888 Animaliens are out there. Where will your
+                        Chamalien take you?
                       </div>
                       <Box h={8} />
                     </div>
@@ -265,7 +265,7 @@ const BackgroundSection = (props) => {
   const data = useStaticQuery(
     graphql`
       query {
-        desktop: file(relativePath: { eq: "assets/wallpaper.png" }) {
+        desktop: file(relativePath: { eq: "assets/anim.png" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 10000) {
               ...GatsbyImageSharpFluid_withWebp

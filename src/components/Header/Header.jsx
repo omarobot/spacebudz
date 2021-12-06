@@ -18,8 +18,8 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import * as style from "./Tab.module.css";
 
 //assets
-import Logo from "../../images/assets/spacebudz.svg";
-import Title from "../../images/assets/title.png";
+import Logo from "../../images/assets/infinity.png";
+import Title from "../../images/assets/title1.png";
 import { Box, Link } from "@chakra-ui/layout";
 
 const Header = () => {

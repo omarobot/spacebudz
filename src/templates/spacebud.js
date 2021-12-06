@@ -1,4 +1,7 @@
 import { useDisclosure } from "@chakra-ui/hooks";
+//assets
+import Show from "../images/assets/show.svg";
+import { UnitDisplay } from "../components/UnitDisplay";
 import React from "react";
 import MiddleEllipsis from "react-middle-ellipsis";
 // import { Button } from "../components/Button";
@@ -31,11 +34,6 @@ import Market from "../cardano/market";
 // import secrets from "../../secrets";
 
 const PROJECT_ID = "mainnetHDbhAmdQcwdcYeoGYMVvldun2zRNIBu2";
-
-
-//assets
-import Show from "../images/assets/show.svg";
-import { UnitDisplay } from "../components/UnitDisplay";
 
 export const toHex = (bytes) => Buffer.from(bytes).toString("hex");
 
