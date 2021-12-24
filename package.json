@@ -48,7 +48,7 @@
     "gatsby-transformer-sharp": "^3.9.0",
     "keep-alive-route": "^0.1.2",
     "node-fetch": "^2.6.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "rc-slider": "^9.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
